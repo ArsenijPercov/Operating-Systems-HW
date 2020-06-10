@@ -1,0 +1,196 @@
+pmap 12720
+Before:12720:   ./cat++ -l ./librot13.so -l ./libupper.so -l ./librot13.so
+000056050cc37000      8K r-x-- cat++
+000056050ce38000      4K r---- cat++
+000056050ce39000      4K rw--- cat++
+000056050e7bd000    132K rw---   [ anon ]
+00007f6ff065c000   1948K r-x-- libc-2.27.so
+00007f6ff0843000   2048K ----- libc-2.27.so
+00007f6ff0a43000     16K r---- libc-2.27.so
+00007f6ff0a47000      8K rw--- libc-2.27.so
+00007f6ff0a49000     16K rw---   [ anon ]
+00007f6ff0a4d000     12K r-x-- libdl-2.27.so
+00007f6ff0a50000   2044K ----- libdl-2.27.so
+00007f6ff0c4f000      4K r---- libdl-2.27.so
+00007f6ff0c50000      4K rw--- libdl-2.27.so
+00007f6ff0c51000    156K r-x-- ld-2.27.so
+00007f6ff0e54000     20K rw---   [ anon ]
+00007f6ff0e78000      4K r---- ld-2.27.so
+00007f6ff0e79000      4K rw--- ld-2.27.so
+00007f6ff0e7a000      4K rw---   [ anon ]
+00007ffcd668c000    132K rw---   [ stack ]
+00007ffcd6728000     12K r----   [ anon ]
+00007ffcd672b000      4K r-x--   [ anon ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total             6588K
+
+
+
+After:12720:   ./cat++ -l ./librot13.so -l ./libupper.so -l ./librot13.so
+000056050cc37000      8K r-x-- cat++
+000056050ce38000      4K r---- cat++
+000056050ce39000      4K rw--- cat++
+000056050e7bd000    132K rw---   [ anon ]
+00007f6ff045a000      4K r-x-- librot13.so
+00007f6ff045b000   2044K ----- librot13.so
+00007f6ff065a000      4K r---- librot13.so
+00007f6ff065b000      4K rw--- librot13.so
+00007f6ff065c000   1948K r-x-- libc-2.27.so
+00007f6ff0843000   2048K ----- libc-2.27.so
+00007f6ff0a43000     16K r---- libc-2.27.so
+00007f6ff0a47000      8K rw--- libc-2.27.so
+00007f6ff0a49000     16K rw---   [ anon ]
+00007f6ff0a4d000     12K r-x-- libdl-2.27.so
+00007f6ff0a50000   2044K ----- libdl-2.27.so
+00007f6ff0c4f000      4K r---- libdl-2.27.so
+00007f6ff0c50000      4K rw--- libdl-2.27.so
+00007f6ff0c51000    156K r-x-- ld-2.27.so
+00007f6ff0e54000     20K rw---   [ anon ]
+00007f6ff0e78000      4K r---- ld-2.27.so
+00007f6ff0e79000      4K rw--- ld-2.27.so
+00007f6ff0e7a000      4K rw---   [ anon ]
+00007ffcd668c000    132K rw---   [ stack ]
+00007ffcd6728000     12K r----   [ anon ]
+00007ffcd672b000      4K r-x--   [ anon ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total             8644K
+
+
+
+Before:12720:   ./cat++ -l ./librot13.so -l ./libupper.so -l ./librot13.so
+000056050cc37000      8K r-x-- cat++
+000056050ce38000      4K r---- cat++
+000056050ce39000      4K rw--- cat++
+000056050e7bd000    132K rw---   [ anon ]
+00007f6ff045a000      4K r-x-- librot13.so
+00007f6ff045b000   2044K ----- librot13.so
+00007f6ff065a000      4K r---- librot13.so
+00007f6ff065b000      4K rw--- librot13.so
+00007f6ff065c000   1948K r-x-- libc-2.27.so
+00007f6ff0843000   2048K ----- libc-2.27.so
+00007f6ff0a43000     16K r---- libc-2.27.so
+00007f6ff0a47000      8K rw--- libc-2.27.so
+00007f6ff0a49000     16K rw---   [ anon ]
+00007f6ff0a4d000     12K r-x-- libdl-2.27.so
+00007f6ff0a50000   2044K ----- libdl-2.27.so
+00007f6ff0c4f000      4K r---- libdl-2.27.so
+00007f6ff0c50000      4K rw--- libdl-2.27.so
+00007f6ff0c51000    156K r-x-- ld-2.27.so
+00007f6ff0e54000     20K rw---   [ anon ]
+00007f6ff0e78000      4K r---- ld-2.27.so
+00007f6ff0e79000      4K rw--- ld-2.27.so
+00007f6ff0e7a000      4K rw---   [ anon ]
+00007ffcd668c000    132K rw---   [ stack ]
+00007ffcd6728000     12K r----   [ anon ]
+00007ffcd672b000      4K r-x--   [ anon ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total             8644K
+
+
+
+After:12720:   ./cat++ -l ./librot13.so -l ./libupper.so -l ./librot13.so
+000056050cc37000      8K r-x-- cat++
+000056050ce38000      4K r---- cat++
+000056050ce39000      4K rw--- cat++
+000056050e7bd000    132K rw---   [ anon ]
+00007f6ff0258000      4K r-x-- libupper.so
+00007f6ff0259000   2044K ----- libupper.so
+00007f6ff0458000      4K r---- libupper.so
+00007f6ff0459000      4K rw--- libupper.so
+00007f6ff045a000      4K r-x-- librot13.so
+00007f6ff045b000   2044K ----- librot13.so
+00007f6ff065a000      4K r---- librot13.so
+00007f6ff065b000      4K rw--- librot13.so
+00007f6ff065c000   1948K r-x-- libc-2.27.so
+00007f6ff0843000   2048K ----- libc-2.27.so
+00007f6ff0a43000     16K r---- libc-2.27.so
+00007f6ff0a47000      8K rw--- libc-2.27.so
+00007f6ff0a49000     16K rw---   [ anon ]
+00007f6ff0a4d000     12K r-x-- libdl-2.27.so
+00007f6ff0a50000   2044K ----- libdl-2.27.so
+00007f6ff0c4f000      4K r---- libdl-2.27.so
+00007f6ff0c50000      4K rw--- libdl-2.27.so
+00007f6ff0c51000    156K r-x-- ld-2.27.so
+00007f6ff0e54000     20K rw---   [ anon ]
+00007f6ff0e78000      4K r---- ld-2.27.so
+00007f6ff0e79000      4K rw--- ld-2.27.so
+00007f6ff0e7a000      4K rw---   [ anon ]
+00007ffcd668c000    132K rw---   [ stack ]
+00007ffcd6728000     12K r----   [ anon ]
+00007ffcd672b000      4K r-x--   [ anon ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total            10700K
+
+
+
+Before:12720:   ./cat++ -l ./librot13.so -l ./libupper.so -l ./librot13.so
+000056050cc37000      8K r-x-- cat++
+000056050ce38000      4K r---- cat++
+000056050ce39000      4K rw--- cat++
+000056050e7bd000    132K rw---   [ anon ]
+00007f6ff0258000      4K r-x-- libupper.so
+00007f6ff0259000   2044K ----- libupper.so
+00007f6ff0458000      4K r---- libupper.so
+00007f6ff0459000      4K rw--- libupper.so
+00007f6ff045a000      4K r-x-- librot13.so
+00007f6ff045b000   2044K ----- librot13.so
+00007f6ff065a000      4K r---- librot13.so
+00007f6ff065b000      4K rw--- librot13.so
+00007f6ff065c000   1948K r-x-- libc-2.27.so
+00007f6ff0843000   2048K ----- libc-2.27.so
+00007f6ff0a43000     16K r---- libc-2.27.so
+00007f6ff0a47000      8K rw--- libc-2.27.so
+00007f6ff0a49000     16K rw---   [ anon ]
+00007f6ff0a4d000     12K r-x-- libdl-2.27.so
+00007f6ff0a50000   2044K ----- libdl-2.27.so
+00007f6ff0c4f000      4K r---- libdl-2.27.so
+00007f6ff0c50000      4K rw--- libdl-2.27.so
+00007f6ff0c51000    156K r-x-- ld-2.27.so
+00007f6ff0e54000     20K rw---   [ anon ]
+00007f6ff0e78000      4K r---- ld-2.27.so
+00007f6ff0e79000      4K rw--- ld-2.27.so
+00007f6ff0e7a000      4K rw---   [ anon ]
+00007ffcd668c000    132K rw---   [ stack ]
+00007ffcd6728000     12K r----   [ anon ]
+00007ffcd672b000      4K r-x--   [ anon ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total            10700K
+
+
+
+After:12720:   ./cat++ -l ./librot13.so -l ./libupper.so -l ./librot13.so
+000056050cc37000      8K r-x-- cat++
+000056050ce38000      4K r---- cat++
+000056050ce39000      4K rw--- cat++
+000056050e7bd000    132K rw---   [ anon ]
+00007f6ff0258000      4K r-x-- libupper.so
+00007f6ff0259000   2044K ----- libupper.so
+00007f6ff0458000      4K r---- libupper.so
+00007f6ff0459000      4K rw--- libupper.so
+00007f6ff045a000      4K r-x-- librot13.so
+00007f6ff045b000   2044K ----- librot13.so
+00007f6ff065a000      4K r---- librot13.so
+00007f6ff065b000      4K rw--- librot13.so
+00007f6ff065c000   1948K r-x-- libc-2.27.so
+00007f6ff0843000   2048K ----- libc-2.27.so
+00007f6ff0a43000     16K r---- libc-2.27.so
+00007f6ff0a47000      8K rw--- libc-2.27.so
+00007f6ff0a49000     16K rw---   [ anon ]
+00007f6ff0a4d000     12K r-x-- libdl-2.27.so
+00007f6ff0a50000   2044K ----- libdl-2.27.so
+00007f6ff0c4f000      4K r---- libdl-2.27.so
+00007f6ff0c50000      4K rw--- libdl-2.27.so
+00007f6ff0c51000    156K r-x-- ld-2.27.so
+00007f6ff0e54000     20K rw---   [ anon ]
+00007f6ff0e78000      4K r---- ld-2.27.so
+00007f6ff0e79000      4K rw--- ld-2.27.so
+00007f6ff0e7a000      4K rw---   [ anon ]
+00007ffcd668c000    132K rw---   [ stack ]
+00007ffcd6728000     12K r----   [ anon ]
+00007ffcd672b000      4K r-x--   [ anon ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total            10700K
+
+
+
+HELLO WORLD

@@ -1,0 +1,246 @@
+\documentclass[a4paper]{article}
+\usepackage[pdftex]{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+\usepackage{a4wide}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{minted}
+% move the asterisk at the right position
+\lstset{basicstyle=\ttfamily,tabsize=4,literate={*}{${}^*{}$}1}
+%\lstset{language=C,basicstyle=\ttfamily}
+%\usepackage{moreverb}
+\usepackage{palatino}
+\usepackage{multicol}
+\usepackage{tabularx}
+%\usepackage{comment}
+\usepackage{verbatim}
+\usepackage{color}
+
+%% pdflatex?
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+\pdffalse % we are not running PDFLaTeX
+\else
+\pdfoutput=1 % we are running PDFLaTeX
+\pdftrue
+\fi
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+\ifpdf
+\DeclareGraphicsExtensions{.pdf, .jpg}
+\else
+\DeclareGraphicsExtensions{.eps, .jpg}
+\fi
+
+\parindent=0cm
+\parskip=0cm
+
+\setlength{\columnseprule}{0.4pt}
+\addtolength{\columnsep}{2pt}
+
+\addtolength{\textheight}{5.5cm}
+\addtolength{\topmargin}{-26mm}
+\pagestyle{empty}
+
+%%
+%% Sheet setup
+%% 
+\newcommand{\coursename}{Operating Systems}
+\newcommand{\courseno}{CO20-320202}
+ 
+\newcommand{\sheettitle}{Homework}
+\newcommand{\mytitle}{}
+\newcommand{\mytoday}{{03 November} 2019}
+
+% Current Assignment number
+\newcounter{assignmentno}
+\setcounter{assignmentno}{4}
+
+% Current Problem number, should always start at 1
+\newcounter{problemno}
+\setcounter{problemno}{1}
+
+%%
+%% problem and bonus environment
+%%
+\newcounter{probcalc}
+\newcommand{\problem}[2]{
+  \pagebreak[2]
+  \setcounter{probcalc}{#2}
+  ~\\
+  {\large \textbf{Problem {\arabic{assignmentno}}.{\arabic{problemno}}} \hspace{0.2cm}\textit{#1}} \refstepcounter{problemno}\vspace{2pt}\\}
+
+\newcommand{\bonus}[2]{
+  \pagebreak[2]
+  \setcounter{probcalc}{#2}
+  ~\\
+  {\large \textbf{Bonus Problem {\arabic{assignmentno}}.\textcolor{blue}{\arabic{problemno}}} \hspace{0.2cm}\textit{#1}} \refstepcounter{problemno}\vspace{2pt}\\}
+
+%% some counters  
+\newcommand{\assignment}{\arabic{assignmentno}}
+
+%% solution  
+\newcommand{\solution}{\pagebreak[2]{\bf Solution:}\\}
+
+%% Hyperref Setup
+\hypersetup{pdftitle={Homework \assignment},
+  pdfsubject={\coursename},
+  pdfauthor={},
+  pdfcreator={},
+  pdfkeywords={Operating Systems},
+  %  pdfpagemode={FullScreen},
+  %colorlinks=true,
+  %bookmarks=true,
+  %hyperindex=true,
+  bookmarksopen=false,
+  bookmarksnumbered=true,
+  breaklinks=true,
+  %urlcolor=darkblue
+  urlbordercolor={0 0 0.7}
+}
+
+\begin{document}
+\coursename \hfill Course: \courseno\\
+Jacobs University Bremen \hfill \mytoday\\
+{Arsenij Percov}\hfill
+\vspace*{0.3cm}\\
+\begin{center}
+{\Large \sheettitle{} {\assignment}\\}
+\end{center}
+
+\problem{}{0}
+\solution
+a)
+\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+	reference string&1&2&3&4&1&1&4&2&1&2 \\
+	\hline
+	frame 0&1&1&3&1&1&1&1&1&1&1 \\
+	\hline
+	frame 1&&2&2&4&4&4&4&2&2&2 \\
+	\hline
+	page fault&*&*&*&*&*&&&*&& \\
+
+	\hline
+	\end{tabular}
+\end{center}
+Total 6 page faults.
+\\
+b)
+\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+	reference string&1&2&3&4&1&1&4&2&1&2 \\
+	\hline
+	frame 0&1&1&1&4&4&4&4&4&4&4 \\
+	\hline
+	frame 1&&2&2&2&1&1&1&1&1&1 \\
+	\hline
+	frame 2&&&3&3&3&3&3&2&2&2 \\
+	\hline
+	page fault&*&*&*&*&*&&&*&& \\
+	\hline
+	\end{tabular}
+\end{center}
+Total 6 page faults.
+\\
+c)
+\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+	reference string&1&2&3&4&1&1&4&2&1&2 \\
+	\hline
+	frame 0&1&1&1&1&1&1&1&1&1&1 \\
+	\hline
+	frame 1&&2&3&4&4&4&4&2&2&2 \\
+	\hline
+	page fault&*&*&*&*&&&&*&& \\
+
+	\hline
+	\end{tabular}
+\end{center}
+Total 5 page faults.
+\\
+d)
+\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+	reference string&1&2&3&4&1&1&4&2&1&2 \\
+	\hline
+	frame 0&1&1&1&1&1&1&1&1&1&1 \\
+	\hline
+	frame 1&&2&2&2&2&2&2&2&2&2 \\
+	\hline
+	frame 2&&&3&4&4&4&4&4&4&4 \\
+	\hline
+	page fault&*&*&*&*&&&&&& \\
+	\hline
+	\end{tabular}
+\end{center}
+Total 4 page faults.
+\\
+e)
+\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+	reference string&1&2&3&4&1&1&4&2&1&2 \\
+	\hline
+	frame 0&1&1&3&3&1&1&1&2&2&2 \\
+	\hline
+	frame 1&&2&2&4&4&4&4&4&1&1 \\
+	\hline
+	page fault&*&*&*&*&*&&&*&*& \\
+
+	\hline
+	\end{tabular}
+\end{center}
+Total 7 page faults.
+\\
+f)
+\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+	reference string&1&2&3&4&1&1&4&2&1&2 \\
+	\hline
+	frame 0&1&1&1&4&4&4&4&4&4&4 \\
+	\hline
+	frame 1&&2&2&2&1&1&1&1&1&1 \\
+	\hline
+	frame 2&&&3&3&3&3&3&2&2&2 \\
+	\hline
+	page fault&*&*&*&*&*&&&*&& \\
+	\hline
+	\end{tabular}
+\end{center}
+Total 6 page faults.
+\\
+
+\problem{}{0}
+\solution
+a)\\
+The program loads transformation in the order it reads the arguments, we use getopt, that goes from left to right, then we save functions starting from 0 index, and execute them in the same order, so the order of transformations is defined by the order of provided arguments (transformations). \\
+In this case we use first rot13 transformation, which either adds 13 to the first 13 letter of alphabet, or deducts 13 if it is letter from last 13 letters of alphabet. \\
+After first transformation we have string uryyb jbeyq. \\
+Next, we do the upper case transformation, which makes the string change every lower case letter to its upper case substitute. \\
+The string will become URYYB JBEYQ.
+\\
+Last we apply, again the rot13 transformation. Since letters that were before 13th became with index (index in context of alphabet) bigger than 13, when we deduct 13 from them, we will recieve the original letter. Therefore, two or any other even number of rot13 transformations on the same string will be canceled out.\\
+The final string is:HELLO WORLD
+\\
+\\
+b)\\
+From the results of the pmap calls, I could observe that every time we load the new library 4 memory segments are added, 3 of the size 4k and 1 of the size 2044k. Also when we add same library multiple times nothing happens to the memory, and the same library is reused. You can find output from the cat++ with pmap calls inside in the archive (result.txt).\\\\
+c)\\
+Regarding the cat -n, I believe the answer is yes. We can create a function which we will use to make a library for that transformation. The function has one static int, which works as a count for the number of lines, and then we concatenate the count value with the original line, and we returned modified line. \\
+For wc, we cannot implement it properly, because we output same number of lines, and there are in input, however for wc, we expect  to receive number of lines equal to  the number of files provided. However, we can make similar program,, but that will print the the counters' values for numbers, but every time updated value for each line.
+
+\end{document}
